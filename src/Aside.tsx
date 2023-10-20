@@ -33,6 +33,7 @@ const Aside: React.FC = () => {
                             <RiArrowDropRightFill/> 
                         </motion.div>
                     </div>
+                    <motion.div animate={{scaleX: isAdminBarOpened ? 1 : 0}}>
                     <div className="flex flex-col pl-10">
                         <div className={`flex flex-col ${isAdminBarOpened ? 'block' : 'hidden'}`}>
                             <Link to="/admin">Geral</Link>
@@ -40,6 +41,7 @@ const Aside: React.FC = () => {
                             <Link to="/alunos">Alunos</Link>
                         </div>
                     </div>
+                    </motion.div>
                 </div>
                 <div id="Config">
                     <div onClick={()=>{setIsConfiguracoesBarOpened(i => !i)}} className="flex flex-row pl-5 cursor-pointer">
@@ -48,13 +50,15 @@ const Aside: React.FC = () => {
                             <RiArrowDropRightFill/> 
                         </motion.div>
                     </div>
-                    <div className="flex flex-col pl-10">
-                        <div className={`flex flex-col ${isConfiguracoesBarOpened ? 'block' : 'hidden'}`}>
-                            <Link to="/admin">Blabla</Link>
-                            <Link to="/usuarios">Blabla</Link>
-                            <Link to="/alunos">Blablabla</Link>
+                    <motion.div animate={{scaleX: isConfiguracoesBarOpened ? 1 : 0}} >
+                        <div className="flex flex-col pl-10">
+                            <div className={`flex flex-col ${isConfiguracoesBarOpened ? 'block' : 'hidden'}`}>
+                                <Link to="/admin">Blabla</Link>
+                                <Link to="/usuarios">Blabla</Link>
+                                <Link to="/alunos">Blablabla</Link>
+                            </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </div>
