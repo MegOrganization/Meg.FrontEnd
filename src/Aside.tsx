@@ -33,9 +33,9 @@ const Aside: React.FC = () => {
                             <RiArrowDropRightFill/> 
                         </motion.div>
                     </div>
-                    <motion.div animate={{scaleX: isAdminBarOpened ? 1 : 0}}>
+                    <motion.div className="h-0 overflow-hidden" animate={{height: isAdminBarOpened ? "auto" : 0}}>
                     <div className="flex flex-col pl-10">
-                        <div className={`flex flex-col ${isAdminBarOpened ? 'block' : 'hidden'}`}>
+                        <div className={`flex flex-col`}>
                             <Link to="/admin">Geral</Link>
                             <Link to="/usuarios">Usuarios</Link>
                             <Link to="/alunos">Alunos</Link>
@@ -50,9 +50,9 @@ const Aside: React.FC = () => {
                             <RiArrowDropRightFill/> 
                         </motion.div>
                     </div>
-                    <motion.div animate={{scaleX: isConfiguracoesBarOpened ? 1 : 0}} >
+                    <motion.div className="h-0 overflow-hidden" animate={{height: isConfiguracoesBarOpened ? "auto" : 0}}>
                         <div className="flex flex-col pl-10">
-                            <div className={`flex flex-col ${isConfiguracoesBarOpened ? 'block' : 'hidden'}`}>
+                            <div className={`flex flex-col `}>
                                 <Link to="/admin">Blabla</Link>
                                 <Link to="/usuarios">Blabla</Link>
                                 <Link to="/alunos">Blablabla</Link>
