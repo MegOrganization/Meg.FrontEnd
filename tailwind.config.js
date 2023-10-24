@@ -6,7 +6,8 @@ export default {
       colors:{
         primary: "#1C2434",
         seconadry: "",
-        tertiary: "#F1F5F9"
+        tertiary: "#F1F5F9",
+        disabled: "#6e6d6d"
       }
 
     },

@@ -38,7 +38,9 @@ const Aside: React.FC = () => {
                         {title:"usuarios",path:"/admin/usuarios"},
                         {title:"Alunos", path:"/admin/alunos"}
                     ]}
-                    icon={MdAdminPanelSettings} />
+                    icon={MdAdminPanelSettings}
+                    active={true}
+                    />
 
                 <TabBar title="Configuracoes" routes={
                     [
@@ -46,6 +48,7 @@ const Aside: React.FC = () => {
                         {title:"Usuarios",path:"/configuracoes/usuarios"},
                         {title:"Alunos", path:"/configuracoes/alunos"}
                     ]}
+                    active={false}
                     icon={IoIosSettings} />
                 
             </div>
