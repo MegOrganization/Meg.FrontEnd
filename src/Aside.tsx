@@ -3,10 +3,9 @@ import {Link} from 'react-router-dom';
 import { AiOutlineBars } from 'react-icons/ai';
 import { RiArrowDropRightFill } from 'react-icons/ri';
 import { MdAdminPanelSettings } from 'react-icons/md';
+import { AiOutlineUsergroupAdd } from 'react-icons/ai';
 import { IoIosSettings } from 'react-icons/io';
 import TabBar from "./components/TabBar";
-
-
 import { motion } from "framer-motion";
 
 
@@ -32,6 +31,14 @@ const Aside: React.FC = () => {
             </div>
             <div id="tabs" className="flex flex-col gap-2">
 
+            <TabBar title="Cadastros" routes={
+                    [
+                        {title:"Usuário", path:"/cadastro/usuario"}
+                    ]}
+                    icon={AiOutlineUsergroupAdd}
+                    active={true}
+                />
+
                 <TabBar title="Administrador" routes={
                     [
                         {title:"Geral", path:"/admin"},
@@ -40,16 +47,17 @@ const Aside: React.FC = () => {
                     ]}
                     icon={MdAdminPanelSettings}
                     active={true}
-                    />
+                />
 
-                <TabBar title="Configuracoes" routes={
+                <TabBar title="Configurações" routes={
                     [
                         {title:"Geral", path:"/configuracoes"},
                         {title:"Usuarios",path:"/configuracoes/usuarios"},
                         {title:"Alunos", path:"/configuracoes/alunos"}
                     ]}
                     active={false}
-                    icon={IoIosSettings} />
+                    icon={IoIosSettings} 
+                />
                 
             </div>
         </div>
