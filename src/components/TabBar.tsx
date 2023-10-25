@@ -43,7 +43,7 @@ const TabBar: FC<ITabBar> = (props: ITabBar) => {
                 <div className="flex flex-col">
                     <div className={`flex flex-col ${props.routesLeftPadding ? props.routesLeftPadding : 'pl-12'}`}>
                         {props.routes.map(route=>{
-                            return(<Link to={route.path}>{route.title}</Link>)
+                            return(<Link key={route.title} to={route.path}>{route.title}</Link>)
                         })}
                     </div>
                 </div>

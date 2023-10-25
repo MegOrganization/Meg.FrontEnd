@@ -9,6 +9,8 @@ interface IInputText {
     placeholder?: string,
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
     onBlur?: () => void
+    required? : boolean
+    validationMsg?: string
 }
 
 const InputText : FC<IInputText> = (props: IInputText) => {
@@ -16,6 +18,9 @@ const InputText : FC<IInputText> = (props: IInputText) => {
         <>
             <input type={props.type} 
                 onChange={(e)=>{
+                    if(props.validationMsg){
+                        e.target.setCustomValidity("");
+                    }
                     if(props.onChange){
                         props.onChange(e);
                     }
@@ -23,8 +28,9 @@ const InputText : FC<IInputText> = (props: IInputText) => {
                 placeholder={props.placeholder}
                 spellCheck={props.spellCheck != undefined ? props.spellCheck : true}
                 className={`${props.className ? props.className : ""} pl-2 border-2 text-secondary border-quaternary rounded h-10 `}
-                aria-invalid={false}
                 onBlur={props.onBlur}
+                required={props.required}
+                onInvalid={(e:React.ChangeEvent<HTMLInputElement>)  => props.validationMsg ? e.target.setCustomValidity(props.validationMsg) : e.target.setCustomValidity("")}
             />
         </>
     )
