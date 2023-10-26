@@ -3,6 +3,7 @@ import InputText from '../../components/InputText'
 import InputTextCPF from '../../components/InputTextCPF'
 import { AiOutlineUserAdd } from 'react-icons/ai'
 import SubmitButton, { ESubmitButtonType } from '../../components/SubmitButton'
+import clsx  from 'clsx'
 
 const Usuario: FC = () => {
   const [genero, setGenero] = useState([
@@ -129,15 +130,15 @@ const Usuario: FC = () => {
         <div className="flex flex-row gap-3">
 
           <div className="flex flex-1 flex-col">
-            <h4 className="text-secondary mb-2 ">Data Nascimento</h4>
+            <h4 className={clsx('text-secondary mb-2')}>Data Nascimento</h4>
             <InputText placeholder="99/99/9999" spellCheck={false} type="date" />
           </div>
 
           <div className='flex flex-1 flex-col '>
             <h4 className='text-secondary mb-2'>Gênero</h4>
-            <select className='flex bg-white border h-10 rounded pl-2'>
+            <select className={clsx('flex bg-white border h-10 rounded pl-2')}>
               {genero.map(i => {
-                return <option key={i}>{i}</option>
+                return <option className="text-secondary" key={i}>{i}</option>
               })}
             </select>
           </div>

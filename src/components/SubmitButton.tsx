@@ -1,47 +1,38 @@
-import { FC } from "react"
+import clsx from 'clsx'
+import { FC } from 'react'
 
-
-enum ESubmitButtonType{
-    "submit",
-    "reset"
-
+enum ESubmitButtonType {
+  'submit',
+  'reset'
 }
 
 interface ISubmitButton {
-    value: string,
-    className?: string,
-    type?: ESubmitButtonType
-
+  value: string
+  className?: string
+  type?: ESubmitButtonType
 }
-
+`bg-primary
+ hover:bg-secondary`
 const SubmitButton: FC<ISubmitButton> = (props: ISubmitButton) => {
-    return(
+  return (
     <>
-        <input type={props.type==ESubmitButtonType.reset ? "reset" : "submit"} value={props.value} className={`
-        ${props.className} 
-        text-white 
-        rounded 
-        justify-center 
-        items-center 
-        transition-all
-        hover:bg-secondary 
-        ${props.type==ESubmitButtonType.reset ? 
-            `
-            bg-red-500
-            hover:bg-red-700
-            `
-            :
-            `
-            bg-primary
-            hover:bg-secondary
-            `
-        }
-        `}
-        
-        />
+      <input
+        type={props.type == ESubmitButtonType.reset ? 'reset' : 'submit'} 
+        value={props.value}
+        className={clsx(
+        props.className, 
+        "text-white", 
+        "rounded", 
+        "justify-center", 
+        "items-center", 
+        "transition-all",
+        {"bg-red-500 hover:bg-red-700" : props.type==ESubmitButtonType.reset},
+        {"bg-primary hover:bg-secondary" : props.type==ESubmitButtonType.submit || ESubmitButtonType==undefined}
+        )}
+      />
     </>
-    )
+  )
 }
 
-export {ESubmitButtonType}
+export { ESubmitButtonType }
 export default SubmitButton
