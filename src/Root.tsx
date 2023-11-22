@@ -3,6 +3,7 @@ import Aside from "./Aside";
 import MainHeader from "./components/MainHeader"; 
 import {Routes, Route, Link} from 'react-router-dom';
 import Usuario from "./pages/Cadastro/Usuario";
+import Alert from "./components/Alert/Alert";
 
 import {
     BrowserRouter,
@@ -17,6 +18,7 @@ const Root : FC<IProps> = (props: IProps ) => {
     return( 
         <>  
             <BrowserRouter>
+                <Alert/>
                 <Aside/>
                 <div className="flex flex-1 flex-col">
                     <MainHeader />
